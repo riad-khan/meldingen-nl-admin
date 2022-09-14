@@ -173,6 +173,7 @@ class MeldingenController extends Controller
      */
     public function destroy($id)
     {
+        $deleteForeignData = DB::table('eenheden')->where('melding','=',$id)->delete();
         $delete = DB::table('melding')->where('id','=',$id)->delete();
         return redirect()->route('meldingen')->with('status','Meldingen deleted successfully');
     }

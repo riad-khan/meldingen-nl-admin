@@ -11,7 +11,7 @@
         <section class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
-                    <div class="col-sm-6">
+                    <div class="col-md-6">
                         <h1>Meldingen</h1>
                     </div>
                     <div class="col-sm-6">
@@ -25,9 +25,9 @@
             </div><!-- /.container-fluid -->
         </section>
         <section class="content">
-            <div class="container">
+
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-8 float-left">
                         <form method="post" action="{{url('/meldingen/update/'.$data->id)}}">
                             @csrf
                             <div class="form-group">
@@ -130,10 +130,12 @@
                             <button class="btn btn-md btn-primary m-2">Update</button>
                         </form>
                     </div>
-                </div>
+
             </div>
 
         </section>
     </div>
+
+
 
 @endsection

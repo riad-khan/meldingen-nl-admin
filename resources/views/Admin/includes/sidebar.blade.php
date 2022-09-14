@@ -57,6 +57,19 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a href="/blog-category" class="nav-link {{Request::segment(1) === 'blog-category' ? 'active':''}} ">
+
+                        <p>Blog Category</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/blogs" class="nav-link {{Request::segment(1) === 'blogs' ? 'active':''}} ">
+
+                        <p>Blogs</p>
+                    </a>
+                </li>
+
 
 
 

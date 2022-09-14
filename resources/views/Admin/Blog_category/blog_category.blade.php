@@ -1,7 +1,7 @@
 @extends('Admin')
 
 @section('title')
-    <title>Regio</title>
+    <title>Blog Category</title>
 @endsection
 
 @section('content')
@@ -12,12 +12,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Regio</h1>
+                        <h1>Blog Category  <a href="/blog-category/create"><i style="font-size: 25px" class="fa fa-plus m-1"></i></a></h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="/admin">Home</a></li>
-                            <li class="breadcrumb-item active">Regio</li>
+                            <li class="breadcrumb-item active">Blog Category</li>
                         </ol>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
 
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Regio Data</h3>
+                                <h3 class="card-title">Blog Category Data</h3>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
@@ -52,9 +52,10 @@
                                     <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>Regio</th>
-                                        <th>Regio url</th>
-                                        <th>Provincie</th>
+                                        <th>Category Name</th>
+                                        <th>Category Title</th>
+                                        <th>Description</th>
+                                        <th>Slug</th>
 
                                         <th>Action</th>
                                     </tr>
@@ -63,10 +64,10 @@
                                     <tfoot>
                                     <tr>
                                         <th>Id</th>
-                                        <th>Regio</th>
-                                        <th>Regio url</th>
-                                        <th>Provincie</th>
-
+                                        <th>Category Name</th>
+                                        <th>Category Title</th>
+                                        <th>Description</th>
+                                        <th>Slug</th>
                                         <th>Action</th>
 
                                     </tr>
@@ -98,7 +99,7 @@
                 "responsive": true,
                 "processing": true,
                 "serverSide": true,
-                "ajax": '/regio-data'
+                "ajax": '/blog-category-data'
             });
         });
     </script>
