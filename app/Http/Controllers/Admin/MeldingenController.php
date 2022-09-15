@@ -69,9 +69,10 @@ class MeldingenController extends Controller
                date('m/d/y', $thisData->timestamp),
                $thisData->prio,
 
+//                 <a href="/delete/meldingen/'.$thisData->id.'" class="btn btn-danger btn-sm" onclick="return confirm(\'Are you confirm to delete?\')"><i class="fa fa-trash"></i></a>
 
                 '<a href="/meldingen/edit/'.$thisData->id.'" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
-                <a href="/delete/meldingen/'.$thisData->id.'" class="btn btn-danger btn-sm" onclick="return confirm(\'Are you confirm to delete?\')"><i class="fa fa-trash"></i></a>'
+               '
             );
         }
         echo'{

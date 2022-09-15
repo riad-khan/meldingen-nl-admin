@@ -49,13 +49,25 @@
                         <p>Meldingen</p>
                     </a>
                 </li>
+{{--                <li class="nav-item">--}}
+{{--                    <a href="/category" class="nav-link {{Request::segment(1) === 'category' ? 'active':''}} ">--}}
 
-                <li class="nav-item">
-                    <a href="/regio" class="nav-link {{Request::segment(1) === 'regio' ? 'active':''}} ">
+{{--                        <p>Category</p>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
 
-                        <p>Regio</p>
-                    </a>
-                </li>
+{{--                <li class="nav-item">--}}
+{{--                    <a href="/regio" class="nav-link {{Request::segment(1) === 'regio' ? 'active':''}} ">--}}
+
+{{--                        <p>Regio</p>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+{{--                <li class="nav-item">--}}
+{{--                    <a href="/provincie" class="nav-link {{Request::segment(1) === 'provincie' ? 'active':''}} ">--}}
+
+{{--                        <p>Provincie</p>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
 
                 <li class="nav-item">
                     <a href="/blog-category" class="nav-link {{Request::segment(1) === 'blog-category' ? 'active':''}} ">
@@ -67,6 +79,32 @@
                     <a href="/blogs" class="nav-link {{Request::segment(1) === 'blogs' ? 'active':''}} ">
 
                         <p>Blogs</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="/partner-blogs" class="nav-link {{Request::segment(1) === 'partner-blogs' ? 'active':''}} ">
+
+                        <p>Partner Blogs</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="/seo-data" class="nav-link {{Request::segment(1) === 'seo-data' ? 'active':''}} ">
+
+                        <p>SEO Data</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/dictionary" class="nav-link {{Request::segment(1) === 'dictionary' ? 'active':''}} ">
+
+                        <p>Dictionary</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/ads" class="nav-link {{Request::segment(1) === 'ads' ? 'active':''}} ">
+
+                        <p>ADS</p>
                     </a>
                 </li>
 

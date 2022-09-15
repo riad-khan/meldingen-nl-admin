@@ -12,12 +12,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-md-6">
-                        <h1>Blog Create</h1>
+                        <h1>Partner Blog Create</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="/admin">Home</a></li>
-                            <li class="breadcrumb-item active"><a href="/blogs">Blog</a></li>
+                            <li class="breadcrumb-item active"><a href="/partner-blogs">Partner Blogs</a></li>
                             <li class="breadcrumb-item active">Create</li>
                         </ol>
                     </div>
@@ -28,10 +28,10 @@
 
             <div class="row">
                 <div class="col-md-8 float-left">
-                    <form method="POST" enctype="multipart/form-data" action="{{'/store/blog'}}">
+                    <form method="POST" enctype="multipart/form-data" action="{{'/store/partner-blogs'}}">
                         @csrf
                         <div class="row">
-                            <div class="col-md-9">
+                            <div class="col-md-12">
                                 <div class="mb-3">
                                     <label for="title" class="form-label">Title</label>
                                     <input autocomplete="off" id="title" name="title" class="form-control" required>
@@ -88,23 +88,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-3">
-                                <h5 class="mt-2">Categories</h5>
-                                @foreach ($categories as $item)
-                                    <div class="form-check">
 
-                                        <input class="form-check-input" type="checkbox" name="category[]" data-name="'s Gravenmoer" value="{{$item->id}}" id="{{$item->id}}"  >
-                                        <label class="form-check-label" for="{{$item->id}}">
-                                            {{$item->category_name}}
-                                        </label> <br>
-
-
-                                    </div>
-                                @endforeach
-                                @error('category')
-                                <span class="text-danger"> {{ $message }} </span>
-                                @enderror
-                            </div>
 
 
                         </div>

@@ -36,6 +36,57 @@ Route::group(['middleware'=>['auth']],function(){
     Route::get('/blogs/edit/{id}',[\App\Http\Controllers\Admin\BlogController::class,'edit']);
     Route::post('/blog/update/{id}',[\App\Http\Controllers\Admin\BlogController::class,'update']);
     Route::get('/blogs/delete/{id}',[\App\Http\Controllers\Admin\BlogController::class,'destroy']);
+
+    //Partner Blog
+    Route::get('/partner-blogs/create',[\App\Http\Controllers\Admin\PartnerBlogController::class,'create']);
+    Route::post('/store/partner-blogs',[\App\Http\Controllers\Admin\PartnerBlogController::class,'store']);
+    Route::get('/partner-blogs-data',[\App\Http\Controllers\Admin\PartnerBlogController::class,'blog_data']);
+    Route::get('/partner-blogs',[\App\Http\Controllers\Admin\PartnerBlogController::class,'index'])->name('partner-blogs');
+    Route::get('/partner-blogs/edit/{id}',[\App\Http\Controllers\Admin\PartnerBlogController::class,'edit']);
+    Route::post('/partner-blogs/update/{id}',[\App\Http\Controllers\Admin\PartnerBlogController::class,'update']);
+    Route::get('/partner-blogs/delete/{id}',[\App\Http\Controllers\Admin\PartnerBlogController::class,'destroy']);
+
+    //Category Routes
+    Route::get('/category/create',[\App\Http\Controllers\Admin\CategoryController::class,'create']);
+    Route::post('/category/store',[\App\Http\Controllers\Admin\CategoryController::class,'store']);
+    Route::get('/category-data',[\App\Http\Controllers\Admin\CategoryController::class,'Categories_data']);
+    Route::get('/category',[\App\Http\Controllers\Admin\CategoryController::class,'index'])->name('category');
+    Route::get('/category/edit/{id}',[\App\Http\Controllers\Admin\CategoryController::class,'edit']);
+    Route::post('/category/update/{id}',[\App\Http\Controllers\Admin\CategoryController::class,'update']);
+    Route::get('/category/delete/{id}',[\App\Http\Controllers\Admin\CategoryController::class,'destroy']);
+
+    //provincie Routes
+    Route::get('/provincie/create',[\App\Http\Controllers\Admin\ProvincieController::class,'create']);
+    Route::post('/provincie/store',[\App\Http\Controllers\Admin\ProvincieController::class,'store']);
+    Route::get('/provincie',[\App\Http\Controllers\Admin\ProvincieController::class,'index'])->name('provincie');
+    Route::get('/provincie-data',[\App\Http\Controllers\Admin\ProvincieController::class,'provincie_data']);
+    Route::get('/provincie/edit/{id}',[\App\Http\Controllers\Admin\ProvincieController::class,'edit']);
+    Route::post('/provincie/update/{id}',[\App\Http\Controllers\Admin\ProvincieController::class,'update']);
+    Route::get('/provincie/delete/{id}',[\App\Http\Controllers\Admin\ProvincieController::class,'destroy']);
+
+    //SEO Data Routes
+
+    Route::get('/seo-data',[\App\Http\Controllers\Admin\SeoController::class,'index'])->name('seo_data');
+    Route::get('/fetch-seo-data',[\App\Http\Controllers\Admin\SeoController::class,'seo_data']);
+    Route::get('/seo-data/edit/{page}',[\App\Http\Controllers\Admin\SeoController::class,'edit']);
+    Route::post('/seo-data/update/{page}',[\App\Http\Controllers\Admin\SeoController::class,'update']);
+
+    //Dictionary Routes
+    Route::get('/dictionary',[\App\Http\Controllers\Admin\DictionaryController::class,'index'])->name('dictionary');
+    Route::get('/dictionary-data',[\App\Http\Controllers\Admin\DictionaryController::class,'Dictonary_data']);
+    Route::get('/dictionary/edit/{id}',[\App\Http\Controllers\Admin\DictionaryController::class,'edit']);
+    Route::post('/dictionary/update/{id}',[\App\Http\Controllers\Admin\DictionaryController::class,'update']);
+
+
+    //ADS routes
+
+    Route::get('/ads/create',[\App\Http\Controllers\Admin\ADSController::class,'create']);
+    Route::get('/ads',[\App\Http\Controllers\Admin\ADSController::class,'index'])->name('ADS');
+    Route::post('/ads/store',[\App\Http\Controllers\Admin\ADSController::class,'store']);
+    Route::get('/ads-data',[\App\Http\Controllers\Admin\ADSController::class,'ads_data']);
+    Route::get('/ads/edit/{id}',[\App\Http\Controllers\Admin\ADSController::class,'edit']);
+    Route::post('/ads/update/{id}',[\App\Http\Controllers\Admin\ADSController::class,'update']);
+    Route::get('/ads/delete/{id}',[\App\Http\Controllers\Admin\ADSController::class,'destroy']);
 });
 
 
