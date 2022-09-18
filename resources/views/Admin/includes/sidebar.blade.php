@@ -81,6 +81,12 @@
                         <p>Blogs</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="/nieuws" class="nav-link {{Request::segment(1) === 'nieuws' ? 'active':''}} ">
+
+                        <p>Nieuws</p>
+                    </a>
+                </li>
 
                 <li class="nav-item">
                     <a href="/partner-blogs" class="nav-link {{Request::segment(1) === 'partner-blogs' ? 'active':''}} ">

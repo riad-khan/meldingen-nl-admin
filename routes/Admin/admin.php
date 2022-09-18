@@ -87,6 +87,16 @@ Route::group(['middleware'=>['auth']],function(){
     Route::get('/ads/edit/{id}',[\App\Http\Controllers\Admin\ADSController::class,'edit']);
     Route::post('/ads/update/{id}',[\App\Http\Controllers\Admin\ADSController::class,'update']);
     Route::get('/ads/delete/{id}',[\App\Http\Controllers\Admin\ADSController::class,'destroy']);
+
+    //news routes
+
+    Route::get('/nieuws',[\App\Http\Controllers\Admin\newsController::class,'index'])->name('news');
+    Route::get('/news-data',[\App\Http\Controllers\Admin\newsController::class,'news_data']);
+    Route::get('/nieuws/edit/{id}',[\App\Http\Controllers\Admin\newsController::class,'edit']);
+    Route::post('/nieuws/update/{id}',[\App\Http\Controllers\Admin\newsController::class,'update']);
+    Route::get('/nieuws/create',[\App\Http\Controllers\Admin\newsController::class,'create']);
+    Route::post('/nieuws/store',[\App\Http\Controllers\Admin\newsController::class,'store']);
+    Route::get('/nieuws/delete/{id}',[\App\Http\Controllers\Admin\newsController::class,'destroy']);
 });
 
 

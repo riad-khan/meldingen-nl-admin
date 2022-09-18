@@ -42,7 +42,7 @@
 
                                 <div class="mb-3">
                                     <label for="description" class="form-label">Short Description</label>
-                                    <textarea id="short_description" name="short_description" class="form-control" rows="8" required>{{$data->description}}</textarea>
+                                    <textarea id="short_description" name="short_description" class="form-control" rows="8" required>{{stripslashes($data->description)}}</textarea>
                                     @error('description')
                                     <span class="text-danger"> {{ $message }} </span>
                                     @enderror
@@ -50,7 +50,7 @@
                                 <div class="mb-3">
                                     <label for="content" class="form-label">Content</label>
                                     <textarea id="description" name="blog_content" required >
-                                        {{$data->content}}
+                                        {{stripslashes($data->content)}}
 
                                   </textarea>
                                     @error('blog_content')
