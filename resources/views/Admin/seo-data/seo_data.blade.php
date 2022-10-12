@@ -16,7 +16,7 @@
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+                            <li class="breadcrumb-item"><a href="/meldingen">Home</a></li>
                             <li class="breadcrumb-item active">SEO Data</li>
                         </ol>
                     </div>
@@ -75,6 +75,7 @@
 
                                     <thead>
                                     <tr>
+                                        <th>Title</th>
                                         <th>Page</th>
                                         <th>SEO keywords</th>
                                         <th>SEO Meta</th>
@@ -85,6 +86,7 @@
 
                                     <tfoot>
                                     <tr>
+                                        <th>Title</th>
                                         <th>Page</th>
                                         <th>SEO keywords</th>
                                         <th>SEO Meta</th>
@@ -110,7 +112,7 @@
         $(function () {
             $('#example2').DataTable({
                 "paging": true,
-                "lengthChange": false,
+                "lengthChange": true,
                 "searching": true,
                 "ordering": true,
                 "info": true,

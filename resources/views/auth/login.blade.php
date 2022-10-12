@@ -17,6 +17,17 @@
                                  <!-- /.card-header -->
                                  <!-- form start -->
                                  <form action="{{route('login')}}" method="post" id="quickForm">
+
+                                     @if ($errors->any())
+                                         <div class="alert alert-danger">
+                                             <ul>
+                                                 @foreach ($errors->all() as $error)
+                                                     <li>{{ $error }}</li>
+                                                 @endforeach
+                                             </ul>
+                                         </div>
+                                     @endif
+
                                      @csrf
                                      <div class="card-body">
                                          <div class="form-group">

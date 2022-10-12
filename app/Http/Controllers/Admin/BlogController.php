@@ -63,7 +63,7 @@ class BlogController extends Controller
             $dataArray[]=array(
                 $thisData->id,
 
-             $thisData->blog_title,
+             stripslashes($thisData->blog_title),
 
 
                 stripslashes($thisData->description),

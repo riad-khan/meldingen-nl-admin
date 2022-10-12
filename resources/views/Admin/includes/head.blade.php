@@ -14,4 +14,5 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
     <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 </head>

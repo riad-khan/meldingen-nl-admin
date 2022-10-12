@@ -12,7 +12,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Nieuws  <a href="/news/create"><i style="font-size: 25px" class="fa fa-plus m-1"></i></a></h1>
+                        <h1>Nieuws  <a href="/nieuws/create"><i style="font-size: 25px" class="fa fa-plus m-1"></i></a></h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -51,26 +51,26 @@
                                 <table id="example2" class="table table-bordered table-striped">
                                     <thead>
                                     <tr>
+                                        <th>All <input type="checkbox" id="allcheck"> &nbsp;&nbsp;<button class="btn btn-danger btn-sm" title="Delete selected records" id="delete_record"><i class="fa fa-trash"></i></button></th>
                                         <th>Id</th>
                                         <th>Title</th>
-                                        <th>Intro</th>
-
-                                        <th>Story</th>
-
-
+                                        <th>Timestamp</th>
+                                        <th>Postcode</th>
+                                        <th>Plaats</th>
+                                        <th>Provincie</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
 
                                     <tfoot>
                                     <tr>
+                                        <th>#</th>
                                         <th>Id</th>
                                         <th>Title</th>
-                                        <th>Intro</th>
-
-                                        <th>Story</th>
-
-
+                                        <th>Timestamp</th>
+                                        <th>Postcode</th>
+                                        <th>Plaats</th>
+                                        <th>Provincie</th>
                                         <th>Action</th>
 
                                     </tr>
@@ -91,18 +91,91 @@
     </div>
     <script src="//code.jquery.com/jquery-3.5.1.js"></script>
     <script>
-        $(function () {
-            $('#example2').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": true,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-                "responsive": true,
-                "processing": true,
-                "serverSide": true,
-                "ajax": '/news-data'
+
+        function checkcheckbox(){
+
+            // Total checkboxes
+            var length = $('.delete_check').length;
+
+            // Total checked checkboxes
+            var totalchecked = 0;
+            $('.delete_check').each(function(){
+                if($(this).is(':checked')){
+                    totalchecked+=1;
+                }
+            });
+
+            // Checked unchecked checkbox
+            if(totalchecked == length){
+                $("#allcheck").prop('checked', true);
+            }else{
+                $('#allcheck').prop('checked', false);
+            }
+        }
+
+        $(document).ready(function () {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            var dataTable =  $('#example2').DataTable({
+                // "paging": true,
+                // "lengthChange": false,
+                // "searching": true,
+                // "ordering": true,
+                // "info": true,
+                // "autoWidth": false,
+                // "responsive": true,
+                // "processing": true,
+                // "serverSide": true,
+                // "rowReorder": true,
+                // "ajax": '/news-data'
+
+                rowReorder: true,
+                columnDefs: [
+                    { orderable: true, className: 'reorder', targets: 1 },
+                    { orderable: false, targets: '_all' }
+                ],
+                order: [[1, 'desc']],
+                processing: true,
+                serverSide: true,
+                ajax: '/news-data',
+            });
+
+            // Check all
+            $('#allcheck').click(function(){
+                if($(this).is(':checked')){
+                    $('.delete_check').prop('checked', true);
+                }else{
+                    $('.delete_check').prop('checked', false);
+                }
+            });
+
+            $('#delete_record').click(function(){
+
+                var deleteids_arr = [];
+                // Read all checked checkboxes
+                $("input:checkbox[class=delete_check]:checked").each(function () {
+                    deleteids_arr.push($(this).val());
+                });
+
+                // Check checkbox checked or not
+                if(deleteids_arr.length > 0){
+
+                    // Confirm alert
+                    var confirmdelete = confirm("Do you really want to Delete records?");
+                    if (confirmdelete == true) {
+                        $.ajax({
+                            url: '/nieuws/delete-all',
+                            type: 'post',
+                            data: {deleteids_arr: deleteids_arr},
+                            success: function(response){
+                                dataTable.ajax.reload();
+                            }
+                        });
+                    }
+                }
             });
         });
     </script>

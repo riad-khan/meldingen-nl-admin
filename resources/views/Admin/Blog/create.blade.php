@@ -16,7 +16,7 @@
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+                            <li class="breadcrumb-item"><a href="/meldingen">Home</a></li>
                             <li class="breadcrumb-item active"><a href="/blogs">Blog</a></li>
                             <li class="breadcrumb-item active">Create</li>
                         </ol>

@@ -44,6 +44,7 @@ class SeoController extends Controller
         $dataArray=array();
         foreach($data as $thisData){
             $dataArray[]=array(
+                stripslashes($thisData->title),
                 $thisData->page,
                 $thisData->seo_keywords,
                 $thisData->seo_meta,
@@ -122,6 +123,7 @@ class SeoController extends Controller
     public function update(Request $request, $page)
     {
         $updateData = DB::table('seo_data_tables')->where('page','=',$page)->update([
+            'title'=>addslashes($request->title),
             'seo_keywords'=>$request->seo_keyword,
             'seo_meta'=>$request->seo_meta,
             'structured_data'=>$request->structured_data,

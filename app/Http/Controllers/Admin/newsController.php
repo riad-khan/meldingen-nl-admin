@@ -32,12 +32,12 @@ class newsController extends Controller
         $sql="SELECT
         a.id,
         a.title,
-        a.title_url,
-        a.intro,
-        a.story,
-        a.source,
-        a.media
-        FROM nieuws a
+        a.created_at,
+        a.postal,
+        a.staddress,
+        a.city,
+        a.state
+        FROM news a
         where
         1=1 ";
         if($search_value){
@@ -47,7 +47,7 @@ class newsController extends Controller
         $data=DB::select($sql);
 
         $rows=count($data);
-        $sql="select count(a.id) as row from nieuws a where 1=1 ";
+        $sql="select count(a.id) as row from news a where 1=1 ";
         if($search_value){
             $sql.="and a.title like '%{$search_value}%' ";
         }
@@ -55,13 +55,13 @@ class newsController extends Controller
         $dataArray=array();
         foreach($data as $thisData){
             $dataArray[]=array(
-//                '<input class="delete_check" onclick="checkcheckbox();"  type="checkbox" name="newsid[]" value="'.$thisData->id.'">',
+                '<input class="delete_check" onclick="checkcheckbox();"  type="checkbox" name="newsid[]" value="'.$thisData->id.'">',
                 $thisData->id,
                 $thisData->title,
-                $thisData->intro,
-                Str::limit($thisData->story,200),
-
-
+                $thisData->created_at,
+                $thisData->postal,
+                $thisData->city,
+                $thisData->state,
                 '<a href="/nieuws/edit/'.$thisData->id.'" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
                 <a href="/nieuws/delete/'.$thisData->id.'" class="btn btn-danger btn-sm" onclick="return confirm(\'Are you confirm to delete?\')"><i class="fa fa-trash"></i></a>'
             );
@@ -95,20 +95,25 @@ class newsController extends Controller
      */
     public function store(Request $request,slugGenerator $slugGenerator)
     {
-        $insert = DB::table('nieuws')->insert([
+        $insert = DB::table('news')->insert([
             'title'=> addslashes($request->title),
-            'title_url'=>$request->title_url,
-            'intro'=>addslashes($request->intro),
-            'story'=>addslashes($request->story),
-            'source'=>$request->source,
-            'media'=>$request->media,
-            'timestamp'=>time(),
-            'provincie'=>$request->provincie,
-            'regio'=>$request->regio,
-            'stad'=>$request->stad,
+            'post_url'=>$request->post_url,
+            'pubdate'=>now(),
+            'description'=>addslashes($request->description),
+            'content'=>addslashes($request->story),
+            'slug'=>$slugGenerator->generateSlug('news',$request->title),
+            'created_at'=>Carbon::now(),
+            'lat'=>$request->lat,
+            'lon'=>$request->lon,
+            'tags'=>$request->tags,
+            'state'=>$request->provincie,
+            'city'=>$request->stad,
+            'staddress'=>$request->staddress,
+            'postal'=>$request->postal,
+            'image'=>$request->image,
             'seo_keywords'=>$request->seo_keyword,
             'seo_meta'=>$request->seo_meta,
-            'slug'=>$slugGenerator->generateSlug('nieuws',$request->title)
+
 
         ]);
 
@@ -137,7 +142,7 @@ class newsController extends Controller
         $provincie = DB::table('provincie')->get();
         $regio = DB::table('regio')->get();
         $stad = DB::table('stad')->get();
-        $edit = $crudActions->edit_Data('nieuws',$id);
+        $edit = $crudActions->edit_Data('news',$id);
         return view('Admin.News.edit',['provincies'=>$provincie,'regios'=>$regio,'stads'=>$stad,'data'=>$edit]);
     }
 
@@ -150,16 +155,19 @@ class newsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $update = DB::table('nieuws')->where('id','=',$id)->update([
+        $update = DB::table('news')->where('id','=',$id)->update([
             'title'=> addslashes($request->title),
-            'title_url'=>$request->title_url,
-            'intro'=>addslashes($request->intro),
-            'story'=>addslashes($request->story),
-            'source'=>$request->source,
-            'media'=>$request->media,
-            'provincie'=>$request->provincie,
-            'regio'=>$request->regio,
-            'stad'=>$request->stad,
+            'post_url'=>$request->post_url,
+            'description'=>addslashes($request->description),
+            'content'=>addslashes($request->story),
+            'lat'=>$request->lat,
+            'lon'=>$request->lon,
+            'tags'=>$request->tags,
+            'state'=>$request->provincie,
+            'city'=>$request->stad,
+            'staddress'=>$request->staddress,
+            'postal'=>$request->postal,
+            'image'=>$request->image,
             'seo_keywords'=>$request->seo_keyword,
             'seo_meta'=>$request->seo_meta,
         ]);
@@ -175,7 +183,14 @@ class newsController extends Controller
      */
     public function destroy($id,CrudActions $crudActions)
     {
-        $delete = $crudActions->deleteValue('nieuws',$id);
+        $delete = $crudActions->deleteValue('news',$id);
         return redirect()->route('news')->with('status','Nieuws deleted successfully');
+    }
+
+    public function delete_all(Request $request){
+        if(count($request->deleteids_arr)>0){
+            $ids=$request->deleteids_arr;
+            DB::table('news')->whereIn('id', $ids)->delete();
+        }
     }
 }

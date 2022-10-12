@@ -16,7 +16,7 @@
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+                            <li class="breadcrumb-item"><a href="/meldingen">Home</a></li>
                             <li class="breadcrumb-item active"><a href="/seo-data">SEO Data</a></li>
                             <li class="breadcrumb-item active">Edit</li>
                         </ol>
@@ -30,6 +30,11 @@
                 <div class="col-md-8 float-left">
                     <form method="POST" action="{{url('/seo-data/update/'.$data->page)}}">
                         @csrf
+
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Title</label>
+                            <input type="text" name="title" value="{{stripslashes($data->title)}}" class="form-control">
+                        </div>
                         <div class="mb-3">
                             <label for="image" class="form-label">SEO Keyword</label>
                             <textarea id="image" name="seo_keyword" class="form-control">{{$data->seo_keywords}}</textarea>

@@ -12,11 +12,11 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Dictionary Data </h1>
+                        <h1>ADS Data <a href="/ads/create"><i style="font-size: 25px" class="fa fa-plus m-1"></i></a> </h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+                            <li class="breadcrumb-item"><a href="/meldingen">Home</a></li>
                             <li class="breadcrumb-item active">ADS Data</li>
                         </ol>
                     </div>
@@ -98,7 +98,7 @@
         $(function () {
             $('#example2').DataTable({
                 "paging": true,
-                "lengthChange": false,
+                "lengthChange": true,
                 "searching": true,
                 "ordering": true,
                 "info": true,

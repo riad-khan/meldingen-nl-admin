@@ -97,6 +97,25 @@ Route::group(['middleware'=>['auth']],function(){
     Route::get('/nieuws/create',[\App\Http\Controllers\Admin\newsController::class,'create']);
     Route::post('/nieuws/store',[\App\Http\Controllers\Admin\newsController::class,'store']);
     Route::get('/nieuws/delete/{id}',[\App\Http\Controllers\Admin\newsController::class,'destroy']);
+    Route::post('/nieuws/delete-all',[\App\Http\Controllers\Admin\newsController::class,'delete_all']);
+
+    Route::get('/comments',[\App\Http\Controllers\NewsCommentsController::class,'index']);
+    Route::get('/comments-data',[\App\Http\Controllers\NewsCommentsController::class,'comment_data']);
+    Route::post('/comments/bulk-approve',[\App\Http\Controllers\NewsCommentsController::class,'bulk_approve']);
+    Route::post('/comments/bulk-delete',[\App\Http\Controllers\NewsCommentsController::class,'bulk_delete']);
+    Route::get('/comments/pending/{id}',[\App\Http\Controllers\NewsCommentsController::class,'pending']);
+    Route::get('/comments/delete/{id}',[\App\Http\Controllers\NewsCommentsController::class,'delete']);
+
+
+
+    //user Routes
+    Route::get('/user',[\App\Http\Controllers\UserController::class,'index'])->name('user');
+    Route::get('/user/user-data',[\App\Http\Controllers\UserController::class,'user_data']);
+    Route::get('/user/delete/{id}',[\App\Http\Controllers\UserController::class,'destroy']);
+    Route::get('/user/create',[\App\Http\Controllers\UserController::class,'create']);
+    Route::post('/user/store',[\App\Http\Controllers\UserController::class,'store']);
+    Route::get('/user/edit/{id}',[\App\Http\Controllers\UserController::class,'edit']);
+    Route::post('/user/update/{id}',[\App\Http\Controllers\UserController::class,'update']);
 });
 
 

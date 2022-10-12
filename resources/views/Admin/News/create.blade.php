@@ -35,88 +35,81 @@
                                 <div class="mb-3">
                                     <label for="title" class="form-label">Title</label>
                                     <input autocomplete="off" id="title" name="title" class="form-control" required>
-                                    @error('title')
-                                    <span class="text-danger"> {{ $message }} </span>
-                                    @enderror
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="title" class="form-label">Title url</label>
-                                    <input autocomplete="off" id="title" name="title_url" class="form-control" required>
-                                    @error('title_url')
-                                    <span class="text-danger"> {{ $message }} </span>
-                                    @enderror
+                                    <label for="post_url" class="form-label">Nieuws source url</label>
+                                    <input autocomplete="off" id="post_url" name="post_url" class="form-control" required>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="description" class="form-label">Intro</label>
-                                    <textarea id="short_description" name="intro" class="form-control" rows="8" required></textarea>
-                                    @error('description')
-                                    <span class="text-danger"> {{ $message }} </span>
-                                    @enderror
+                                    <label for="description" class="form-label">Description</label>
+                                    <textarea id="content" name="description" class="form-control" rows="8" required></textarea>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="content" class="form-label">Story</label>
+                                    <label for="content" class="form-label">Content</label>
                                     <textarea id="description" name="story" required >
 
-
                                   </textarea>
-                                    @error('blog_content')
-                                    <span class="text-danger"> {{ $message }} </span>
-                                    @enderror
+
                                 </div>
 
 
 
                                 <div class="mb-3">
-                                    <label for="title" class="form-label">Source</label>
-                                    <input autocomplete="off" id="title" name="source" class="form-control" required>
-                                    @error('source')
-                                    <span class="text-danger"> {{ $message }} </span>
-                                    @enderror
+                                    <label for="postal" class="form-label">Postcode</label>
+                                    <input id="postal" name="postal" class="form-control" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="title" class="form-label">Media</label>
-                                    <input autocomplete="off" id="title" name="media" class="form-control" required>
-                                    @error('media')
-                                    <span class="text-danger"> {{ $message }} </span>
-                                    @enderror
+                                    <label for="staddress" class="form-label">Adres</label>
+                                    <input id="staddress" name="staddress" class="form-control" required>
                                 </div>
 
-
                                 <div class="mb-3">
-                                    <label for="image" class="form-label">SEO Keyword</label>
-                                    <textarea id="image" name="seo_keyword" class="form-control"></textarea>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="image" class="form-label">SEO Meta Description</label>
-                                    <textarea id="image" name="seo_meta" class="form-control" ></textarea>
+                                    <label for="stad_regio" class="form-label">Stad</label>
+                                    <select name="stad" id="stad_regio" class="form-control" required="">
+                                        @foreach($stads as $item)
+                                            <option value="{{$item->stad}}">{{$item->stad}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="mb-3">
                                     <label for="stad_regio" class="form-label">Provincie</label>
                                     <select name="provincie" id="stad_regio" class="form-control" required="">
                                         @foreach($provincies as $item)
-                                        <option value="{{$item->id}}">{{$item->provincie}}</option>
+                                            <option value="{{$item->provincie}}">{{$item->provincie}}</option>
                                         @endforeach
                                     </select>
                                 </div>
 
+
+
                                 <div class="mb-3">
-                                    <label for="stad_regio" class="form-label">Regio</label>
-                                    <select name="regio" id="stad_regio" class="form-control" required="">
-                                        @foreach($regios as $item)
-                                            <option value="{{$item->id}}">{{$item->regio}}</option>
-                                        @endforeach
-                                    </select>
+                                    <label for="lat_" class="form-label">Lat</label>
+                                    <input id="lat_" name="lat" class="form-control" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="stad_regio" class="form-label">Stad</label>
-                                    <select name="stad" id="stad_regio" class="form-control" required="">
-                                        @foreach($stads as $item)
-                                            <option value="{{$item->id}}">{{$item->stad}}</option>
-                                        @endforeach
-                                    </select>
+                                    <label for="lng_" class="form-label">Lng</label>
+                                    <input id="lng_" name="lon" class="form-control" required>
                                 </div>
+                                <div class="mb-3">
+                                    <label for="lng_" class="form-label">Tags</label>
+                                    <input id="lng_" name="tags" class="form-control" >
+                                </div>
+                                <div class="mb-3">
+                                    <label for="image" class="form-label">Image url</label>
+                                    <input id="image" name="image" class="form-control" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="image" class="form-label">Seo Keyword</label>
+                                    <textarea id="image" name="seo_keyword" class="form-control"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="image" class="form-label">Seo Meta</label>
+                                    <textarea id="image" name="seo_meta" class="form-control"> </textarea>
+                                </div>
+
+
 
 
                             </div>

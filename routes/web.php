@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 //    return view('Admin');
 //});
 
-Route::get('/admin', function () {
+Route::get('/', function () {
     return view('Admin.dashboard');
 })->middleware(['auth'])->name('dashboard');
 

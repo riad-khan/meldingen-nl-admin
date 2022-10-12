@@ -11,7 +11,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                <img src="{{!\Illuminate\Support\Facades\Auth::user()->profile_pic ? "https://p.kindpng.com/picc/s/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png": \Illuminate\Support\Facades\Auth::user()->profile_pic}}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
                 <a href="#" class="d-block">{{\Illuminate\Support\Facades\Auth::user()->name}}</a>
@@ -25,17 +25,7 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
-                <li class="nav-item menu-open">
 
-                    <a href="#" class="nav-link {{Request::segment(1) === 'admin' ? 'active':''}}">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>
-                            Dashboard
-
-                        </p>
-                    </a>
-
-                </li>
 
 
 
@@ -87,6 +77,12 @@
                         <p>Nieuws</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="/comments" class="nav-link {{Request::segment(1) === 'comments' ? 'active':''}} ">
+
+                        <p>Nieuws comments</p>
+                    </a>
+                </li>
 
                 <li class="nav-item">
                     <a href="/partner-blogs" class="nav-link {{Request::segment(1) === 'partner-blogs' ? 'active':''}} ">
@@ -111,6 +107,21 @@
                     <a href="/ads" class="nav-link {{Request::segment(1) === 'ads' ? 'active':''}} ">
 
                         <p>ADS</p>
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a href="/user" class="nav-link {{Request::segment(1) === 'user' ? 'active':''}} ">
+
+                        <p>User</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="/logout" class="nav-link">
+
+                        <p>Logout</p>
                     </a>
                 </li>
 
