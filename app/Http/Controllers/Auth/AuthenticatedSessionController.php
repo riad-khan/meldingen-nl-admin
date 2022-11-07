@@ -39,7 +39,7 @@ class AuthenticatedSessionController extends Controller
         if (Auth::attempt(['email' => $email, 'password' => $password, 'role' => 1,'status'=>1])) {
             $request->session()->regenerate();
 
-            return redirect('/');
+            return redirect('/meldingen');
         }
 
         return back()->withErrors([

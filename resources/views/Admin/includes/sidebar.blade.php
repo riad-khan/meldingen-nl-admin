@@ -119,6 +119,20 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="/privacybeleid" class="nav-link {{Request::segment(1) === 'privacybeleid' ? 'active':''}} ">
+
+                        <p>Privacybeleid</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="/cookiebeleid" class="nav-link {{Request::segment(1) === 'cookiebeleid' ? 'active':''}} ">
+
+                        <p>Cookiebeleid</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a href="/logout" class="nav-link">
 
                         <p>Logout</p>

@@ -106,6 +106,21 @@ Route::group(['middleware'=>['auth']],function(){
     Route::get('/comments/pending/{id}',[\App\Http\Controllers\NewsCommentsController::class,'pending']);
     Route::get('/comments/delete/{id}',[\App\Http\Controllers\NewsCommentsController::class,'delete']);
 
+    //cookie
+    Route::get('/Cookiebeleid/create',[\App\Http\Controllers\CookiebeleidController::class,'create']);
+    Route::get('/Cookiebeleid/edit/{id}',[\App\Http\Controllers\CookiebeleidController::class,'edit']);
+    Route::post('/Cookiebeleid/store',[\App\Http\Controllers\CookiebeleidController::class,'store']);
+    Route::post('/Cookiebeleid/update/{id}',[\App\Http\Controllers\CookiebeleidController::class,'update']);
+    Route::get('/cookiebeleid',[\App\Http\Controllers\CookiebeleidController::class,'index'])->name('Cookiebeleid');
+    Route::get('/cookie-data',[\App\Http\Controllers\CookiebeleidController::class,'cookie_data']);
+
+    //privacy
+
+    Route::get('/privacybeleid',[\App\Http\Controllers\PrivacyController::class,'index'])->name('privacy');
+    Route::get('/privacybeleid-data',[\App\Http\Controllers\PrivacyController::class,'privacy_data']);
+    Route::get('/privacybeleid/edit/{id}',[\App\Http\Controllers\PrivacyController::class,'edit']);
+    Route::post('/privacybeleid/update/{id}',[\App\Http\Controllers\PrivacyController::class,'update']);
+
 
 
     //user Routes
