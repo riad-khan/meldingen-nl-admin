@@ -57,27 +57,27 @@ class ADSController extends Controller
                 $section = 'Meldingen Home 3';
             }
             elseif ($thisData->section == 4){
-                $section = 'Meldingen Mobile 1';
+                $section = 'Meldingen Details 1';
             }
             elseif ($thisData->section == 5){
-                $section = 'News 1';
+                $section = 'Meldingen Details 2';
             }
             elseif ($thisData->section == 6){
-                $section = 'News 2';
+                $section = 'News 1';
             }
             elseif ($thisData->section == 7){
-                $section = 'News 3';
+                $section = 'News 2';
             }
             elseif ($thisData->section == 8){
-                $section = 'News 4';
+                $section = 'News 3';
             }elseif ($thisData->section == 9){
-                $section = 'News Mobile 1';
+                $section = 'News Details 1';
             }
             elseif ($thisData->section == 10){
-                $section = 'News Mobile 2';
+                $section = 'News Details 2';
             }
             elseif ($thisData->section == 11){
-                $section = 'News Details 1';
+                $section = 'News Details 3';
             }
 
             $status = [];

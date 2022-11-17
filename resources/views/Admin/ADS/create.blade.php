@@ -78,26 +78,17 @@
                                         <option value="1">Meldingen Home 1</option>
                                         <option value="2">Meldingen Home 2</option>
                                         <option value="3">Meldingen Home 3</option>
-                                        <option value="4">Meldingen Mobile 1</option>
-                                        <option value="5">News 1</option>
-                                        <option value="6">News 2</option>
-                                        <option value="7">News 3</option>
-                                        <option value="8">News 4</option>
-                                        <option value="9">News Mobile 1</option>
-                                        <option value="10">News Mobile 2</option>
-                                        <option value="11">News Details 1</option>
-                                        <option value="12">News Details 2</option>
-                                        <option value="13">News Details Mobile 1</option>
-
-{{--                                        --}}
-{{--                                        <option value="4">Meldingen Details 1</option>--}}
-{{--                                        <option value="5">Meldingen Details 2</option>--}}
-{{--                                        <option value="6">News 1</option>--}}
-{{--                                        <option value="7">News 2</option>--}}
-{{--                                        <option value="8">News Details 1</option>--}}
-{{--                                        <option value="9">News Details 2</option>--}}
-{{--                                        <option value="10">Blog</option>--}}
-{{--                                        <option value="11">Partner</option>--}}
+                                        <option value="4">Meldingen Details 1</option>
+                                        <option value="5">Meldingen Details 2</option>
+                                        <option value="6">News 1</option>
+                                        <option value="7">News 2</option>
+                                        <option value="8">News 3</option>
+                                        <option value="9">News Details 1</option>
+                                        <option value="10">News Details 2</option>
+                                        <option value="11">News Details 3</option>
+                                        <option value="12">Partner Blog 1</option>
+                                      
+                                       
                                     </select>
 
                                     @error('section')
