@@ -80,13 +80,14 @@
                                         <option value="3">Meldingen Home 3</option>
                                         <option value="4">Meldingen Details 1</option>
                                         <option value="5">Meldingen Details 2</option>
-                                        <option value="6">News 1</option>
-                                        <option value="7">News 2</option>
-                                        <option value="8">News 3</option>
-                                        <option value="9">News Details 1</option>
-                                        <option value="10">News Details 2</option>
-                                        <option value="11">News Details 3</option>
-                                        <option value="12">Partner Blog 1</option>
+                                        <option value="6">Meldingen Details 3</option>
+                                        <option value="7">News 1</option>
+                                        <option value="8">News 2</option>
+                                        <option value="9">News 3</option>
+                                        <option value="10">News Details 1</option>
+                                        <option value="11">News Details 2</option>
+                                        <option value="12">News Details 3</option>
+                                        <option value="13">Partner Blog 1</option>
                                       
                                        
                                     </select>

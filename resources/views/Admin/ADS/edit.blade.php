@@ -72,15 +72,15 @@
                                         <option value="1" {{$data->section == 1 ? 'selected':''}}>Meldingen Home 1</option>
                                         <option value="2" {{$data->section == 2 ? 'selected':''}}>Meldingen Home 2</option>
                                         <option value="3" {{$data->section == 3 ? 'selected':''}}>Meldingen Home 3</option>
-                                        <option value="4" {{$data->section == 4 ? 'selected':''}}>Meldingen Mobile 1</option>
-                                        <option value="5" {{$data->section == 5 ? 'selected':''}}>News 1</option>
-                                        <option value="6" {{$data->section == 6 ? 'selected':''}}>News 2</option>
-                                        <option value="7" {{$data->section == 7 ? 'selected':''}}>News 3</option>
-                                        <option value="8" {{$data->section == 8 ? 'selected':''}}>News 4</option>
-                                        <option value="9" {{$data->section == 9 ? 'selected':''}}>News Mobile 1</option>
-                                        <option value="10" {{$data->section == 10 ? 'selected':''}}>News Mobile 2</option>
-                                        <option value="11" {{$data->section == 11 ? 'selected':''}}>News Details 1</option>
-                                        <option value="12" {{$data->section == 12 ? 'selected':''}}>News Details 2</option>
+                                        <option value="4" {{$data->section == 4 ? 'selected':''}}>Meldingen Details 1</option>
+                                        <option value="5" {{$data->section == 5 ? 'selected':''}}>Meldingen Details 2</option>
+                                        <option value="6" {{$data->section == 6 ? 'selected':''}}>Meldingen Details 3</option>
+                                        <option value="7" {{$data->section == 7 ? 'selected':''}}>News 1</option>
+                                        <option value="8" {{$data->section == 8 ? 'selected':''}}>News 2</option>
+                                        <option value="9" {{$data->section == 9 ? 'selected':''}}>News 3</option>
+                                        <option value="10" {{$data->section == 10 ? 'selected':''}}>News Details 1</option>
+                                        <option value="11" {{$data->section == 11 ? 'selected':''}}>News Details 2</option>
+                                        <option value="12" {{$data->section == 12 ? 'selected':''}}>News Details 3</option>
                                         <option value="13" {{$data->section == 13 ? 'selected':''}}>News Details Mobile 1</option>
 
                                     </select>
