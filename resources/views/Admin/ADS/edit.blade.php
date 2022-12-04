@@ -81,7 +81,8 @@
                                         <option value="10" {{$data->section == 10 ? 'selected':''}}>News Details 1</option>
                                         <option value="11" {{$data->section == 11 ? 'selected':''}}>News Details 2</option>
                                         <option value="12" {{$data->section == 12 ? 'selected':''}}>News Details 3</option>
-                                        <option value="13" {{$data->section == 13 ? 'selected':''}}>News Details Mobile 1</option>
+                                        <option value="13" {{$data->section == 13 ? 'selected':''}}>Blogs</option>
+                                        <option value="14" {{$data->section == 13 ? 'selected':''}}>Partner Blogs</option>
 
                                     </select>
                                 </div>

@@ -87,7 +87,8 @@
                                         <option value="10">News Details 1</option>
                                         <option value="11">News Details 2</option>
                                         <option value="12">News Details 3</option>
-                                        <option value="13">Partner Blog 1</option>
+                                        <option value="13">Blog</option>
+                                        <option value="14">Partner Blogs</option>
                                       
                                        
                                     </select>
